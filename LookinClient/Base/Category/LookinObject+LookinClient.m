@@ -7,7 +7,11 @@
 //
 
 #import "LookinObject+LookinClient.h"
+#if __has_include("LookinMCP-Swift.h")
+#import "LookinMCP-Swift.h"
+#else
 #import "Lookin-Swift.h"
+#endif
 
 @implementation LookinObject (LookinClient)
 

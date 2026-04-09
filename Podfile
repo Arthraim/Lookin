@@ -11,6 +11,13 @@ target 'LookinClient' do
     #pod 'LookinShared', :path=>'../LookinServer/'
 end
 
+target 'LookinMCP' do
+    platform :osx, '11.0'
+    pod 'ReactiveObjC', '3.1.0'
+    pod 'LookinShared', :git=>'https://github.com/QMUI/LookinServer.git', :branch => 'develop'
+    #pod 'LookinShared', :path=>'../LookinServer/'
+end
+
 # ReactiveObjc 之类的 SDK 的 deployment target 太低了导致无法编译，所以这里改成以项目为准
 post_install do |installer|
   installer.pods_project.targets.each do |target|
